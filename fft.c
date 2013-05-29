@@ -11,6 +11,7 @@ int cmplxExp( double* zr, double* zi, double xr, double xi ) {
 	*zr = factor * cos( xi );
 	*zi = factor * sin( xi );
 	return 0;
+
 }
 
 /*
@@ -181,6 +182,8 @@ int fft( double* real, double* imag, const double* xr, const double* xi, int sam
 				imag[ i ] = evenSamplesr[ k ] - zr * oddSamplesr[ k ] - zi * oddSamplesr[ k ];
 			}
 		}
+
+		/*free all the memory*/
 		free( evenSamplesr );
 		free( evenSamplesi );
 		free( oddSamplesr );
